@@ -3,6 +3,7 @@ import Layout from "./pages/layout/Layout";
 import HomePage from "./pages/home/HomePage";
 import About from "./pages/about/About";
 import WorksPage from "./pages/works/Works";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ function App() {
         {
           path: "/portfolio",
           element: <WorksPage />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
       ],
     },
