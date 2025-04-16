@@ -1,11 +1,26 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./pages/layout/Layout";
+import HomePage from "./pages/home/HomePage";
+import About from "./pages/about/About";
+
 function App() {
-  return (
-    <>
-      <h1 className="text-4xl text-center text-red-600 ">
-        Welcome to my vite, react and tailwindcss project template
-      </h1>
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <HomePage />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
