@@ -42,7 +42,7 @@ const Contact = () => {
       if (response.ok) {
         setSubmitted(true);
         reset();
-        setTimeout(() => setSubmitted(false), 5000);
+        setTimeout(() => setSubmitted(false), 6000);
       } else {
         alert("🚨 Something went wrong. Please try again.");
       }
