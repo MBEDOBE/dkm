@@ -2,6 +2,7 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import PropTypes from "prop-types";
 import { Outlet } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 
 const Layout = () => {
   return (
@@ -25,6 +26,7 @@ const Layout = () => {
         <div className="max-w-screen-xl mx-auto">
           <Outlet />
         </div>
+        <Footer />
       </main>
     </div>
   );

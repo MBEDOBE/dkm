@@ -13,7 +13,7 @@ const Topbar = () => {
   const linkedinProfile = "https://linkedin.com/in/danielmbedobe";
   const twitterProfile = "https://x.com/@kd_mbedobe";
   return (
-    <header className="z-50 flex flex-col items-center py-4 mt-4 rounded-md shadow bg-gray-50 md:px-8 lg:px-4 md:flex-row md:justify-between md:w-full">
+    <header className="z-50 flex flex-col items-center py-2 mt-2 rounded-md shadow bg-gray-50 md:px-8 lg:px-4 md:flex-row md:justify-between md:w-full">
       <img src="/logo.webp" alt="" className="w-40" />
       <div className="flex space-x-6 text-black text-[32px] ">
         <Link to={githubProfile} target="_blank" rel="noopener noreferrer">

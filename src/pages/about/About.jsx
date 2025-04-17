@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import SEO from "../../components/seo/SEO";
 
 const tabs = ["Skill", "Experience", "Education", "Interest"];
 
@@ -88,83 +90,137 @@ const tabContent = {
   ],
 };
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
+
 const About = () => {
   const [activeTab, setActiveTab] = useState("Skill");
 
   return (
-    <section className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 px-6 py-12 mx-auto text-white lg:flex-row">
-      {/* Left: Bio */}
-      <div className="space-y-6 lg:w-1/2">
-        <h1 className="text-4xl font-bold">
-          <span className="text-gray-600">Daniel </span>
-          <span className="text-orange-500">Mbedobe.</span>
-        </h1>
-        <h2 className="text-2xl italic text-gray-300">
-          Your vision, my expertise – together, we create magic.
-        </h2>
-        <p className="text-sm leading-relaxed text-gray-400">
-          Hi, I’m Daniel Mbedobe, a dedicated web developer and data entry
-          specialist with 15+ years of experience. I build responsive,
-          user-focused websites and efficiently handle complex data workflows.
-          My approach blends clean code, attention to detail, and creativity to
-          deliver seamless digital experiences. Whether you need a modern web
-          solution or fast, accurate data handling — I’ve got you covered.
-        </p>
+    <>
+      <SEO
+        title="About | Daniel Mbedobe Kunji"
+        description="Learn more about Daniel Mbedobe Kunji, his journey in web development, data entry, and the tools and technologies he loves using."
+        keywords="about Daniel Mbedobe Kunji, web developer, frontend, WordPress, MERN stack, React, developer story, skills, education"
+      />
+      <section
+        id="about"
+        className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 px-6 py-12 mx-auto text-white lg:flex-row"
+        aria-labelledby="about-heading"
+      >
+        {/* Left: Bio */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="space-y-6 lg:w-1/2"
+        >
+          <header>
+            <h2 id="about-heading" className="sr-only">
+              About Daniel Mbedobe
+            </h2>
+            <h1 className="">
+              <span className="text-gray-600">Daniel Mbedobe</span>
+              <span className="text-orange-500"> Kunji.</span>
+            </h1>
+            <p className="italic ">
+              Your vision, my expertise – together, we create magic.
+            </p>
+          </header>
 
-        {/* Stats */}
-        <div className="flex flex-wrap gap-8 pt-4 text-center">
-          <div>
-            <h3 className="text-3xl font-bold text-orange-500">19+</h3>
-            <p className="text-sm text-gray-300">Years Experience</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-orange-500">301+</h3>
-            <p className="text-sm text-gray-300">Satisfied Clients</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-orange-500">424+</h3>
-            <p className="text-sm text-gray-300">Projects Done</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-orange-500">11</h3>
-            <p className="text-sm text-gray-300">Winning Awards</p>
-          </div>
-        </div>
-      </div>
+          <p className="">
+            Hi, I’m D. Mbedobe Kunji, a dedicated web developer and data entry
+            specialist with 10+ years of experience. I specialize in building
+            responsive web applications using React, JavaScript, and modern CSS
+            frameworks like Tailwind, Bootstrap. I also offer fast, accurate
+            data entry services for businesses and NGOs, ensuring seamless
+            digital workflows. So, whether you need a modern web solution or
+            fast, accurate data handling — I’ve got you covered.
+          </p>
 
-      {/* Right: Tabs */}
-      <div className="w-full space-y-6 lg:w-1/2">
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-4">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              className={`px-4 py-2 text-sm font-semibold rounded ${
-                activeTab === tab
-                  ? "bg-orange-500 text-white"
-                  : "bg-gray-800 text-gray-300"
-              }`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+          {/* Stats Section */}
+          <section aria-label="Professional statistics">
+            <dl className="flex flex-wrap gap-8 pt-4 text-center">
+              {[
+                ["10+", "Years Experience"],
+                ["10+", "Satisfied Clients"],
+                ["13+", "Projects Done"],
+              ].map(([num, label], i) => (
+                <motion.div key={label} custom={i} variants={fadeInUp}>
+                  <dt className="text-3xl font-bold text-orange-500">{num}</dt>
+                  <dd className="text-sm text-gray-400">{label}</dd>
+                </motion.div>
+              ))}
+            </dl>
+          </section>
+        </motion.div>
 
-        {/* Grid Content */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-h-[400px] overflow-y-auto pr-2">
-          {tabContent[activeTab]?.map((item, index) => (
-            <div
-              key={index}
-              className="p-4 bg-gray-900 border-l-4 border-orange-500 rounded"
-            >
-              <h4 className="font-semibold text-white">{item.title}</h4>
-              <p className="text-sm text-gray-400">{item.description}</p>
+        {/* Right: Tabs */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full space-y-6 lg:w-1/2"
+        >
+          {/* Tabs */}
+          <nav aria-label="About section tabs">
+            <div className="flex flex-wrap gap-4">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  className={`px-4 py-2 text-sm font-semibold rounded ${
+                    activeTab === tab
+                      ? "bg-orange-500 text-white"
+                      : "bg-gray-800 text-gray-300"
+                  }`}
+                  onClick={() => setActiveTab(tab)}
+                  aria-pressed={activeTab === tab}
+                  aria-label={`Show ${tab}`}
+                >
+                  {tab}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </nav>
+
+          {/* Tab Content */}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-h-[400px] overflow-y-auto pr-2"
+            role="tabpanel"
+            aria-labelledby={`tab-${activeTab}`}
+          >
+            {tabContent[activeTab]?.map((item, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                variants={fadeInUp}
+                initial="hidden"
+                animate="visible"
+                className="p-4 bg-gray-900 border-l-4 border-orange-500 rounded"
+              >
+                <h3 className="font-semibold text-white">{item.title}</h3>
+                <p className="text-sm text-gray-400">{item.description}</p>
+                {item.subtitle && (
+                  <p className="text-xs italic text-gray-500">
+                    {item.subtitle}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </section>
+    </>
   );
 };
 

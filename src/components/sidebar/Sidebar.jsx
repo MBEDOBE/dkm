@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 const navItems = [
   { icon: faHouseUser, label: "Home", href: "/" },
-  { icon: faUser, label: "About", href: "/about" },
+  { icon: faUser, label: "About", href: "/about-daniel-mbedobe" },
   { icon: faThLarge, label: "Work", href: "/portfolio" },
   { icon: faEnvelope, label: "Contact", href: "/contact" },
 ];

@@ -16,7 +16,7 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "/about",
+          path: "/about-daniel-mbedobe",
           element: <About />,
         },
         {

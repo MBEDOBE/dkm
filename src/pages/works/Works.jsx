@@ -4,6 +4,8 @@ import "swiper/css/pagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "swiper/css";
+import SEO from "../../components/seo/SEO";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -48,70 +50,137 @@ const projects = [
   },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function MyWorks() {
   return (
-    <section className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 py-12 mx-auto text-white lg:flex-row">
-      {/* Left content */}
-      <div className="w-full lg:w-[35%]">
-        <h2 className="mb-4 text-5xl font-bold text-gray-400">
-          See <span className="text-red-500">My Works</span>
-        </h2>
-        <p className="text-gray-300">
-          Discover a collection of my most recent and notable projects. Each one
-          reflects my commitment to quality, creativity, and achieving client
-          goals.
-        </p>
-      </div>
+    <>
+      <SEO
+        title="Portfolio | Daniel Mbedobe Kunji"
+        description="Browse through Daniel Mbedobe Kunji’s portfolio to see his recent projects built with React, Tailwind, WordPress, and more."
+        keywords="portfolio, Daniel Mbedobe Kunji, projects, React, WordPress, Tailwind, frontend work, MERN apps, Ghana developer, web development"
+      />
 
-      {/* Swiper section */}
-      <div className="w-full lg:w-[60%]">
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          spaceBetween={30}
-          slidesPerView={1}
-          className="w-full"
+      <motion.section
+        className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 py-12 mx-auto text-white lg:flex-row"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
+        {/* Left content */}
+        <div className="w-full lg:w-[35%] space-y-4">
+          <motion.div
+            className="h2"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h1>
+              See <span className="text-orange-500">My Works</span>
+            </h1>
+          </motion.div>
+
+          <motion.p
+            className=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Discover a collection of my most recent and notable projects. Each
+            one reflects my commitment to quality, creativity, and achieving
+            client goals.
+          </motion.p>
+        </div>
+
+        {/* Swiper section */}
+        <motion.div
+          className="w-full lg:w-[60%]"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <div className="flex flex-col">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full mb-4 rounded-xl"
-                />
-                <div className="flex justify-between mb-6 border border-red-300 border-1">
-                  <div className="">
-                    <h4 className="text-lg font-semibold text-gray-600">
-                      {project.name}
-                    </h4>
-                    <p className="text-sm text-gray-300">
-                      {project.description}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">
-                      {project.stack.join(", ")}
-                    </p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-red-400 hover:underline"
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={30}
+            slidesPerView={1}
+            className="w-full"
+          >
+            {projects.map((project) => (
+              <SwiperSlide key={project.id}>
+                <motion.div
+                  className="flex flex-col"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full mb-4 rounded-xl"
+                  />
+                  <div className="flex justify-between mb-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-600">
+                        {project.name}
+                      </h4>
+                      <p className="text-sm text-gray-300">
+                        {project.description}
+                      </p>
+                    </div>
+                    <motion.div
+                      className="flex flex-col items-start gap-3"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4 }}
+                      viewport={{ once: true }}
                     >
-                      View live site
-                      <FontAwesomeIcon
-                        icon={faArrowRight}
-                        className="ml-2 hover:animate-spin"
-                      />
-                    </a>
+                      {/* Pills for tech stack */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.stack.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 text-xs font-medium text-orange-400 border border-orange-500 rounded-full bg-orange-900/10"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Animated link */}
+                      <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-red-400"
+                        whileHover={{ x: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        View live site
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      </motion.a>
+                    </motion.div>
                   </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
+      </motion.section>
+    </>
   );
 }
