@@ -11,7 +11,7 @@ const HomePage = () => {
         keywords="Daniel Mbedobe Kunji, frontend developer, MERN stack, Tailwind CSS, Bootstrap, React developer, data entry, WordPress, Ghana, portfolio"
       />
 
-      <main className="flex flex-col-reverse items-center justify-between w-full max-w-screen-xl min-h-screen px-4 pb-10 mx-auto pt-28 lg:py-0 lg:flex-row">
+      <main className="flex flex-col-reverse items-center justify-between w-full max-w-screen-xl min-h-screen px-4 pb-10 mx-auto pt-28 lg:-pt-28 lg:py-0 lg:flex-row">
         {/* Left Side Text */}
         <motion.div
           className="pb-4 space-y-8 text-center lg:pb-0 lg:w-1/2 lg:text-left"

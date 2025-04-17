@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SEO from "../../components/seo/SEO";
 
-const tabs = ["Skill", "Experience", "Education", "Interest"];
+const tabs = ["Skill", "Experience", "Education", "Other", "Languages"];
 
 const tabContent = {
   Skill: [
@@ -28,44 +28,101 @@ const tabContent = {
       description: "Dynamic and typed client-side logic.",
     },
     {
-      title: "Data Entry",
-      description: "Accurate, fast entry and processing of large data sets.",
-    },
-    {
       title: "CMS (WordPress)",
       description: "Building and managing content-heavy websites.",
+    },
+    {
+      title: "Data Analysis",
+      description:
+        "Analyzing and visualizing data using Python libraries like Pandas, NumPy, and Seaborn. Skilled in drawing insights from complex datasets.",
+    },
+    {
+      title: "Data Entry",
+      description: "Accurate, fast entry and processing of large data sets.",
     },
   ],
   Experience: [
     {
-      title: "Frontend Developer",
-      description:
-        "Designed and built responsive web interfaces using React, Tailwind, and WordPress for various clients.",
-      subtitle: "Freelance | 2021 - Present",
+      title: "Software Engineer",
+      subtitle: "Freelance | 2019 - Present",
+      description: `Built full-stack applications using MERN, PHP, and C#. Delivered POS and inventory systems, offered client consultations, and provided ongoing maintenance support.`,
     },
     {
-      title: "Data Entry Assistant",
-      description:
-        "Managed entry of community survey data, maintained accuracy, and supported team with reports.",
-      subtitle: "Yendi Peace Centre | 2019 - 2021",
+      title: "Field Enumerator",
+      subtitle: "Vision Fund | March 2021",
+      description: `Conducted household interviews and accurately entered survey data using ODK tools.`,
     },
     {
-      title: "Web Developer Intern",
-      description:
-        "Contributed to UI updates and content management system development for educational outreach.",
-      subtitle: "AspireEd Project | 2018",
+      title: "Supervisor - Population and Housing Census",
+      subtitle: "Ghana Statistical Service | June - July 2021",
+      description: `Supervised census data collection, performed quality checks, and coordinated with local authorities for efficient field operations.`,
+    },
+    {
+      title: "Data Entry Clerk",
+      subtitle: "Electoral Commission Ghana | March - May 2012",
+      description: `Entered and verified voter registration data in Excel. Ensured data accuracy and adherence to national electoral standards.`,
+    },
+    {
+      title: "Field Enumerator",
+      subtitle: "World Vision Ghana - Saboba AP | August 2018",
+      description: `Carried out community-level interviews and input data using ODK for development project assessments.`,
+    },
+    {
+      title: "Data Entry Clerk",
+      subtitle: "World Vision Ghana - Saboba AP | May 2015 & Aug 2016",
+      description: `Entered and processed evaluation survey data, collaborated with field teams, and ensured quality control through data validation procedures.`,
     },
   ],
   Education: [
     {
-      title: "University of Ghana",
+      title: "ALX | Certified Software Engineer",
+      subtitle: "2022 - 2023",
       description:
-        "Bachelor’s in Information Studies – focused on digital information systems and data management.",
+        "Completed an intensive, hands-on software engineering program covering full-stack development, system design, and low-level programming.",
     },
     {
-      title: "Udemy / Coursera",
+      title: "Udacity | Data Analyst Nanodegree",
+      subtitle: "2022",
       description:
-        "Completed online certifications in React, JavaScript, and frontend web development.",
+        "Focused on data wrangling, exploratory data analysis, statistics, and building data-driven projects using Python and SQL.",
+    },
+    {
+      title: "Udacity | React Nanodegree",
+      subtitle: "11/2021",
+      description:
+        "Gained in-depth skills in building performant React apps with state management, routing, and testing best practices.",
+    },
+    {
+      title: "Coursera | Google Project Management Specialization",
+      subtitle: "09/2021",
+      description:
+        "Learned the foundations of project planning, execution, Agile methodologies, and stakeholder management.",
+    },
+    {
+      title: "Coursera | Google UX Design Specialization",
+      subtitle: "07/2021",
+      description:
+        "Acquired knowledge in user-centered design, wireframing, prototyping, and usability testing.",
+    },
+    {
+      title: "Coursera | Google IT Support Specialization",
+      subtitle: "05/2021",
+      description:
+        "Covered computer networking, operating systems, system administration, and troubleshooting techniques.",
+    },
+  ],
+  Languages: [
+    {
+      title: "Likpakpaanl",
+      description: "Native",
+    },
+    {
+      title: "English",
+      description: "Fluent",
+    },
+    {
+      title: "French",
+      description: "Fluent",
     },
   ],
   Interest: [
@@ -86,6 +143,23 @@ const tabContent = {
       title: "Photography",
       description:
         "Capturing moments from nature and daily life for visual storytelling.",
+    },
+  ],
+  Other: [
+    {
+      title: "Attention to Detail",
+      description:
+        "Strong focus on accuracy in data entry and quality assurance tasks.",
+    },
+    {
+      title: "Organizational Skills",
+      description:
+        "Able to manage multiple projects and deadlines efficiently with minimal supervision.",
+    },
+    {
+      title: "Communication",
+      description:
+        "Clear, effective communicator with experience presenting technical ideas to non-technical audiences.",
     },
   ],
 };
