@@ -11,7 +11,7 @@ const projects = [
   {
     id: 1,
     image: "/assets/sab-mock.webp",
-    name: "St. Joseph Tech Website",
+    name: "St. Joseph Technical Institute Website",
     stack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     description: "Designed and coded a fully responsive school website.",
     link: "https://stjosephtechsaboba.com",
