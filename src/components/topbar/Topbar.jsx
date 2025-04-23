@@ -15,7 +15,9 @@ const Topbar = () => {
 
   return (
     <header className="z-50 flex flex-col items-center py-2 mt-2 rounded-md shadow bg-gray-50 md:px-8 lg:px-4 md:flex-row md:justify-between md:w-full">
-      <img src="/logo.webp" alt="" className="w-40" />
+      <Link to="/">
+        <img src="/logo.webp" alt="" className="w-40" />
+      </Link>
 
       <div className="flex flex-col items-center space-y-1 md:items-end">
         <div className="flex space-x-6 text-black text-[32px]">

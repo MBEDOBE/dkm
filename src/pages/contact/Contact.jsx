@@ -130,6 +130,12 @@ const Contact = () => {
             Ready to bring your ideas to life? Get in touch, and let&apos;s
             discuss how I can help you achieve your goals.
           </p>
+          <div className="flex justify-between text-orange-300">
+            <span className="text-sm italic">Web development</span>
+            <span className="text-sm italic">Data Entry</span>
+            <span className="text-sm italic">Data Analysis</span>
+            <span className="text-sm italic">Data Scrapping</span>
+          </div>
         </motion.div>
 
         {/* Contact Form */}
