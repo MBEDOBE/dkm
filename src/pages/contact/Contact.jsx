@@ -62,7 +62,7 @@ const Contact = () => {
     <>
       <SEO
         title="Contact | Daniel Mbedobe Kunji"
-        description="Get in touch with Daniel Mbedobe Kunji for freelance web development or data entry services. Let’s build something amazing together."
+        description="Get in touch with Daniel Mbedobe Kunji for freelance web development or data entry services. Let's build something amazing together."
         keywords="contact Daniel Mbedobe Kunji, freelance web developer, frontend projects, MERN stack, contact form, Ghana developer, data entry specialist, work with Daniel"
       />
 
@@ -154,7 +154,7 @@ const Contact = () => {
               <div className="w-full px-2 mb-4 md:w-1/2">
                 <label
                   htmlFor="fullName"
-                  className="block text-sm font-semibold text-gray-300"
+                  className="block text-sm font-semibold text-gray-400"
                 >
                   Full Name
                 </label>
@@ -176,7 +176,7 @@ const Contact = () => {
               <div className="w-full px-2 mb-4 md:w-1/2">
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-semibold text-gray-300"
+                  className="block text-sm font-semibold text-gray-400"
                 >
                   Phone Number{" "}
                   <span className="font-normal text-gray-400">(optional)</span>
@@ -207,7 +207,7 @@ const Contact = () => {
               <div className="w-full px-2 mb-4 md:w-1/2">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-gray-300"
+                  className="block text-sm font-semibold text-gray-400"
                 >
                   Email
                 </label>
@@ -234,7 +234,7 @@ const Contact = () => {
               <div className="w-full px-2 mb-4 md:w-1/2">
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-semibold text-gray-300"
+                  className="block text-sm font-semibold text-gray-400"
                 >
                   Subject
                 </label>
@@ -256,7 +256,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-semibold text-gray-300"
+                className="block text-sm font-semibold text-gray-400"
               >
                 Message
               </label>

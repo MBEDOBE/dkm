@@ -10,43 +10,46 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    image: "/assets/sabtech-macair.png",
-    name: "Crypto Dashboard",
-    stack: ["React", "Tailwind", "Node.js"],
-    description: "Secure platform for crypto transactions.",
-    link: "https://example.com",
+    image: "/assets/sab-mock.webp",
+    name: "St. Joseph Tech Website",
+    stack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    description: "Designed and coded a fully responsive school website.",
+    link: "https://stjosephtechsaboba.com",
   },
   {
     id: 2,
-    image: "/images/project2.png",
-    name: "NFT Marketplace",
-    stack: ["Next.js", "Solidity"],
-    description: "Buy and mint NFTs easily.",
-    link: "https://example.com",
+    image: "/assets/sha-mock.webp",
+    name: "Shalom Guest House App",
+    stack: ["React", "Tailwind", "Node.js", "Express", "SQL"],
+    description:
+      "Designed and developed a booking system and guest house management application from the ground up.",
+    link: "https://shalompguestsaboba.com",
   },
   {
     id: 3,
-    image: "/images/project3.png",
-    name: "Real Estate Site",
-    stack: ["Vue", "Firebase"],
-    description: "Modern platform for home listings.",
-    link: "https://example.com",
+    image: "/assets/ypc-mock.webp",
+    name: "Yendi Peace Centre",
+    stack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    description: "Designed and coded a fully responsive website for YPC.",
+    link: "https://yendipeacecentre.org",
   },
   {
     id: 4,
-    image: "/images/project4.png",
-    name: "Portfolio Website",
-    stack: ["React", "SCSS"],
-    description: "Personal branding and work showcase.",
-    link: "https://example.com",
+    image: "/assets/asp-mock.webp",
+    name: "AspireEd Project",
+    stack: ["React", "Tailwind"],
+    description:
+      "Designed and coded a responsive, clean and modern site for an education-focused project.",
+    link: "https://theaspireedproject.org",
   },
   {
     id: 5,
-    image: "/images/project5.png",
-    name: "eCommerce UI",
-    stack: ["React", "Redux"],
-    description: "Elegant shopping UI for modern stores.",
-    link: "https://example.com",
+    image: "/assets/svd-mock.webp",
+    name: "SVD Ghana Redesign",
+    stack: ["WordPress", "Elementor"],
+    description:
+      "Redesigned and reproduced the existing SVD Ghana website in WordPress.",
+    link: "https://svdghana.org",
   },
 ];
 
@@ -129,13 +132,14 @@ export default function MyWorks() {
                     src={project.image}
                     alt={project.name}
                     className="w-full mb-4 rounded-xl"
+                    loading="lazy"
                   />
                   <div className="flex justify-between mb-6">
                     <div>
                       <h4 className="text-lg font-semibold text-gray-600">
                         {project.name}
                       </h4>
-                      <p className="text-sm text-gray-300">
+                      <p className="text-sm text-gray-400">
                         {project.description}
                       </p>
                     </div>

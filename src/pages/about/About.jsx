@@ -3,42 +3,59 @@ import { motion } from "framer-motion";
 import SEO from "../../components/seo/SEO";
 
 const tabs = ["Skill", "Experience", "Education", "Other", "Languages"];
+const skillSubTabs = ["Web Development", "Data Handling & Analysis"];
 
 const tabContent = {
   Skill: [
     {
-      title: "React Js",
-      description: "Building modern and responsive frontend applications.",
+      category: "Web Development",
+      skills: [
+        {
+          title: "React Js",
+          description: "Building modern and responsive frontend applications.",
+        },
+        {
+          title: "MERN Stack",
+          description:
+            "Developing full-stack web apps using MongoDB, Express, React, and Node.js.",
+        },
+        {
+          title: "Tailwind CSS, Bootstrap",
+          description: "Rapid UI styling with utility-first CSS.",
+        },
+        {
+          title: "HTML5 / CSS3 / Sass",
+          description: "Crafting clean and accessible web pages.",
+        },
+        {
+          title: "JavaScript / TypeScript",
+          description: "Dynamic and type-safe client-side logic.",
+        },
+        {
+          title: "CMS (WordPress)",
+          description: "Building and managing content-heavy websites.",
+        },
+      ],
     },
     {
-      title: "MERN Stack",
-      description:
-        "Developing full-stack web apps using MongoDB, Express, React, and Node.js.",
-    },
-    {
-      title: "Tailwind CSS, Bootstrap",
-      description: "Rapid UI styling with utility-first CSS.",
-    },
-    {
-      title: "HTML5 / CSS3 / Sass",
-      description: "Crafting clean and accessible web pages.",
-    },
-    {
-      title: "JavaScript / TypeScript",
-      description: "Dynamic and typed client-side logic.",
-    },
-    {
-      title: "CMS (WordPress)",
-      description: "Building and managing content-heavy websites.",
-    },
-    {
-      title: "Data Analysis",
-      description:
-        "Analyzing and visualizing data using Python libraries like Pandas, NumPy, and Seaborn. Skilled in drawing insights from complex datasets.",
-    },
-    {
-      title: "Data Entry",
-      description: "Accurate, fast entry and processing of large data sets.",
+      category: "Data Handling & Analysis",
+      skills: [
+        {
+          title: "Data Analysis",
+          description:
+            "Analyzing and visualizing data using Python libraries like Pandas, NumPy, and Seaborn. Skilled in drawing insights from complex datasets.",
+        },
+        {
+          title: "Data Entry",
+          description:
+            "Accurate, fast entry and processing of large data sets. Proven typing speed of 80+ WPM with a focus on accuracy.",
+        },
+        {
+          title: "Data Scraping",
+          description:
+            "Extracting and organizing data from various web sources effectively using Python, Beautiful Soup, Selenium and Scrapy.",
+        },
+      ],
     },
   ],
   Experience: [
@@ -175,12 +192,17 @@ const fadeInUp = {
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("Skill");
+  const [activeSkillTab, setActiveSkillTab] = useState("Web Development");
+
+  const currentSkills =
+    tabContent.Skill.find((cat) => cat.category === activeSkillTab)?.skills ||
+    [];
 
   return (
     <>
       <SEO
         title="About | Daniel Mbedobe Kunji"
-        description="Learn more about Daniel Mbedobe Kunji, his journey in web development, data entry, and the tools and technologies he loves using."
+        description="Learn more about Daniel Mbedobe Kunji, his journey in web development, data entry and extraction, and the tools and technologies he loves using."
         keywords="about Daniel Mbedobe Kunji, web developer, frontend, WordPress, MERN stack, React, developer story, skills, education"
       />
       <section
@@ -208,14 +230,17 @@ const About = () => {
             </p>
           </header>
 
-          <p className="">
-            Hi, I’m D. Mbedobe Kunji, a dedicated web developer and data entry
-            specialist with 10+ years of experience. I specialize in building
-            responsive web applications using React, JavaScript, and modern CSS
-            frameworks like Tailwind, Bootstrap. I also offer fast, accurate
-            data entry services for businesses and NGOs, ensuring seamless
-            digital workflows. So, whether you need a modern web solution or
-            fast, accurate data handling — I’ve got you covered.
+          <p className="text-justify">
+            Hi, I&apos;m D. Mbedobe Kunji, a results-oriented web developer and
+            data specialist with over a decade of experience in web development,
+            data entry, and data scraping. I build responsive web applications
+            using technologies like React, JavaScript, and Tailwind CSS.
+            Furthermore, I offer precise data entry services and effective data
+            scraping to help businesses and NGOs streamline operations and
+            extract valuable information from the web. Whether you require
+            cutting-edge web solutions or efficient data handling and
+            extraction, let&apos;s discuss how my skills can benefit your
+            projects.
           </p>
 
           {/* Stats Section */}
@@ -263,34 +288,76 @@ const About = () => {
             </div>
           </nav>
 
+          {/* Sub Tabs for Skill */}
+          {activeTab === "Skill" && (
+            <nav aria-label="Skill sub-section tabs" className="mt-4">
+              <div className="flex flex-wrap gap-2">
+                {skillSubTabs.map((subTab) => (
+                  <button
+                    key={subTab}
+                    className={`px-3 py-1 text-xs font-semibold rounded ${
+                      activeSkillTab === subTab
+                        ? "bg-orange-400 text-white"
+                        : "bg-gray-700 text-gray-300"
+                    }`}
+                    onClick={() => setActiveSkillTab(subTab)}
+                    aria-pressed={activeSkillTab === subTab}
+                    aria-label={`Show ${subTab} skills`}
+                  >
+                    {subTab}
+                  </button>
+                ))}
+              </div>
+            </nav>
+          )}
+
           {/* Tab Content */}
           <motion.div
-            key={activeTab}
+            key={activeTab === "Skill" ? activeSkillTab : activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-h-[400px] overflow-y-auto pr-2"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-h-[400px] overflow-y-auto pr-2 mt-4" // Added mt-4 for spacing
             role="tabpanel"
             aria-labelledby={`tab-${activeTab}`}
           >
-            {tabContent[activeTab]?.map((item, index) => (
-              <motion.div
-                key={index}
-                custom={index}
-                variants={fadeInUp}
-                initial="hidden"
-                animate="visible"
-                className="p-4 bg-gray-900 border-l-4 border-orange-500 rounded"
-              >
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="text-sm text-gray-400">{item.description}</p>
-                {item.subtitle && (
-                  <p className="text-xs italic text-gray-500">
-                    {item.subtitle}
-                  </p>
-                )}
-              </motion.div>
-            ))}
+            {activeTab === "Skill" && currentSkills.length > 0
+              ? currentSkills.map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    custom={index}
+                    variants={fadeInUp}
+                    initial="hidden"
+                    animate="visible"
+                    className="p-4 bg-gray-900 border-l-4 border-orange-500 rounded"
+                  >
+                    <h3 className="font-semibold text-white">{skill.title}</h3>
+                    <p className="text-sm text-gray-400">{skill.description}</p>
+                    {skill.subtitle && (
+                      <p className="text-xs italic text-gray-500">
+                        {skill.subtitle}
+                      </p>
+                    )}
+                  </motion.div>
+                ))
+              : tabContent[activeTab]?.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    custom={index}
+                    variants={fadeInUp}
+                    initial="hidden"
+                    animate="visible"
+                    className="p-4 bg-gray-900 border-l-4 border-orange-500 rounded"
+                  >
+                    <h3 className="font-semibold text-white">{item.title}</h3>
+                    <p className="text-sm text-gray-400">{item.description}</p>
+                    {item.subtitle && (
+                      <p className="text-xs italic text-gray-500">
+                        {item.subtitle}
+                      </p>
+                    )}
+                  </motion.div>
+                ))}
           </motion.div>
         </motion.div>
       </section>

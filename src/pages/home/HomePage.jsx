@@ -7,8 +7,8 @@ const HomePage = () => {
     <>
       <SEO
         title="Home | Daniel Mbedobe Kunji"
-        description="Daniel Mbedobe is a skilled frontend developer and data entry expert with experience in React, Tailwind CSS, and WordPress. Explore his work and skills."
-        keywords="Daniel Mbedobe Kunji, frontend developer, MERN stack, Tailwind CSS, Bootstrap, React developer, data entry, WordPress, Ghana, portfolio"
+        description="Daniel Mbedobe is a skilled frontend developer and data entry and extraction expert with experience in React, Tailwind CSS, and WordPress. Explore his work and skills."
+        keywords="Daniel Mbedobe Kunji, frontend developer, MERN stack, Tailwind CSS, Bootstrap, React developer, data entry, data scraping, WordPress, Ghana, portfolio"
       />
 
       <main className="flex flex-col-reverse items-center justify-between w-full max-w-screen-xl min-h-screen px-4 pb-10 mx-auto pt-28 lg:-pt-28 lg:py-0 lg:flex-row">
@@ -26,12 +26,12 @@ const HomePage = () => {
           </h1>
 
           <p className="pb-5 text-sm text-justify text-gray-800 md:text-base">
-            I’m Daniel Mbedobe, a frontend developer from Ghana specializing in
-            fast, accessible, and user-focused web experiences. I also offer
-            high-quality data entry services. Whether you need a modern static
-            or dynamic website or help organizing your data, I’m here to deliver
-            with creativity and precision. Let’s build something impactful
-            together.
+            I&apos;m Daniel Mbedobe, a frontend developer from Ghana
+            specializing in fast, accessible, and user-focused web experiences.
+            I also offer high-quality data entry and extraction services.
+            Whether you need a modern static or dynamic website or help
+            organizing your data, I&apos;m here to deliver with creativity and
+            precision. Let&apos;s build something impactful together.
           </p>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
