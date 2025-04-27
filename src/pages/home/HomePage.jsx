@@ -55,6 +55,7 @@ const HomePage = () => {
             src="/assets/pp.webp"
             alt="Portrait of Daniel Mbedobe"
             className="w-[60%] h-auto shadow-xl rounded-xl"
+            loading="lazy"
           />
         </motion.div>
       </main>
