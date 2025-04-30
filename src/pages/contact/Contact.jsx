@@ -122,7 +122,7 @@ const Contact = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
         >
-          <h1 className="">
+          <h1 className="flex text-2xl md:text-4xl">
             <span className="">Let&apos;s Work </span>
             <span className="text-orange-500">Together.</span>
           </h1>
