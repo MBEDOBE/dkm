@@ -140,7 +140,7 @@ const Contact = () => {
 
         {/* Contact Form */}
         <motion.div
-          className="w-full px-5 lg:w-1/2"
+          className="w-full px-5 pb-2 lg:pb-0 lg:w-1/2"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4, type: "spring" }}

@@ -207,7 +207,7 @@ const About = () => {
       />
       <section
         id="about"
-        className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 px-6 py-12 mx-auto text-white lg:flex-row"
+        className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 px-6 py-12 mx-auto text-white pt-28 lg:-pt-28 lg:flex-row"
         aria-labelledby="about-heading"
       >
         {/* Left: Bio */}

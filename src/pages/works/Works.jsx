@@ -72,7 +72,7 @@ export default function MyWorks() {
       />
 
       <motion.section
-        className="flex flex-col items-center justify-between w-full max-w-screen-xl min-h-screen gap-10 py-12 mx-auto text-white lg:flex-row"
+        className="flex flex-col items-center w-full max-w-screen-xl min-h-screen gap-6 mx-auto text-white lg:justify-between lg:gap-10 pt-28 md:pb-28 lg:py-0 lg:flex-row"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
@@ -106,7 +106,7 @@ export default function MyWorks() {
 
         {/* Swiper section */}
         <motion.div
-          className="w-full lg:w-[60%]"
+          className="w-full lg:w-[60%] border-2 border-green-500 p-2"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -134,12 +134,12 @@ export default function MyWorks() {
                     className="w-full mb-4 rounded-xl"
                     loading="lazy"
                   />
-                  <div className="flex justify-between mb-6">
+                  <div className="flex flex-col gap-2 mb-8 lg:justify-between md:flex-row ">
                     <div>
                       <h4 className="text-lg font-semibold text-gray-600">
                         {project.name}
                       </h4>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-400 ">
                         {project.description}
                       </p>
                     </div>
