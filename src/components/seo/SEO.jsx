@@ -6,8 +6,8 @@ function SEO({ title, description, keywords, author }) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Daniel Mbedobe Kunji",
-    url: "https://yourdomain.com", // replace with your actual domain
-    image: "https://yourdomain.com/your-profile-image.jpg", // optional but ideal
+    url: "https://dkmbedobe.onrender.com", // replace with your actual domain
+    image: "https://dkmbedobe.onrender.com/pp.webp", // optional but ideal
     jobTitle: "Web Developer & Data Entry Specialist",
     sameAs: [
       "https://github.com/Mbedobe", // replace with real handles
@@ -34,6 +34,10 @@ function SEO({ title, description, keywords, author }) {
         }
       />
       <meta name="author" content={author || "Daniel Mbedobe"} />
+      <link
+        rel="canonical"
+        href={`https://dkmbedobe.onrender.com${window.location.pathname}`}
+      />
       <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
     </Helmet>
   );
