@@ -106,7 +106,7 @@ export default function MyWorks() {
 
         {/* Swiper section */}
         <motion.div
-          className="w-full lg:w-[60%] border-2 border-green-500 p-2"
+          className="w-full lg:w-[60%] p-2"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
